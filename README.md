@@ -271,4 +271,4 @@
 ![Пути запросов](images/paths.png)
 
 ## Developer
-Daniil Sobolev - daniil.sob56@gmail.com (telegram: [dansobolev](https://t.me/dansobolev))
+Artyom Valiakhmetov - xhuman80@gmail.com (telegram: [art5980](https://t.me/art5980))
