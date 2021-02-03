@@ -1,10 +1,14 @@
 # модуль для запросов касательно пользователя
+import time
 from typing import List
 
 from api.request import RequestCreateUserDto, RequestPatchUserDto
+
 from db.database import DBSession
 from db.exceptions import DBUserAlreadyExistsException, DBUserNotFoundException, DBUserDeletedException
 from db.models import DBUser
+
+from context import Context, ContextLockedException
 
 
 # создание модели пользователя в базе данных
@@ -73,7 +77,10 @@ def patch_user(
     return db_user
 
 
-def update_messages_stats(session: DBSession, *, user_id: int = None, login: str = None, role: str) -> DBUser:
+def update_messages_stats(
+        session: DBSession, *, user_id: int = None, login: str = None, role: str, context: Context
+) -> DBUser:
+
     db_user = None
 
     if user_id is not None:
@@ -81,10 +88,16 @@ def update_messages_stats(session: DBSession, *, user_id: int = None, login: str
     elif login is not None:
         db_user = session.get_user_by_login(login)
 
+    # to pretend data race
+    while context.is_locked:
+        time.sleep(0.05)
+
+    context.lock()
     if role == 'sender':
         db_user.sent_messages += 1
     else:
         db_user.received_messages += 1
+    context.unlock()
 
     return db_user
 
