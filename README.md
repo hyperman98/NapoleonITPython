@@ -1,6 +1,6 @@
 # Messenger
 
-Проект, созданный во время прохождения курса в школе NapoleonIT [(Python BackEnd Developer Course)](https://backend.napoleonit.ru)
+Проект, сделанный во время обучения NapoleonITSchool [(Python BackEnd Developer Course)](https://backend.napoleonit.ru)
 
 ## Task
 
