@@ -35,8 +35,8 @@ class CreateMessage(BaseEndpoint):
         except DBUserDeletedException:
             raise SanicUserDeletedException('User deleted')
 
-        user_queries.update_messages_stats(session, login=request_model.login, role='recipient')
-        user_queries.update_messages_stats(session, user_id=token['id'], role='sender')
+        user_queries.update_messages_stats(session, login=request_model.login, role='recipient', context=self.context)
+        user_queries.update_messages_stats(session, user_id=token['id'], role='sender', context=self.context)
 
         # коммитим данные в БД
         try:
