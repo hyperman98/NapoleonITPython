@@ -1,8 +1,8 @@
-# Offline messenger
+# Messenger
 
-Проект, созданный во время прохождения курса в школе NapoleonIT [(Python BackEnd Developer Course)](https://backend.napoleonit.ru)
+Проект, в школе NapoleonIT [(Python BackEnd Developer Course)](https://backend.napoleonit.ru)
 
-## Technical task
+## Task
 
 Разработка BackEnd части для оффлайн мессенджера. Предполагается, что пользователь может зарегистрироваться, просматривать
 свой профиль и профили других людей, а также отправлять сообщения другим пользователям, зная их логины. Все сообщения 
@@ -38,7 +38,7 @@
 
 Для начала работы необходимо склонировать репозиторий к себе на компьютер:
 
-    git clone https://github.com/dansobolev/NapoleonIT_project
+    git clone https://github.com/hyperman98/NapoleonITPython
 
 Далее, запускаем приложение при помощи docker-compose:
     
@@ -272,5 +272,5 @@
 ## Схема запросов
 ![Пути запросов](images/paths.png)
 
-## Developer
-Daniil Sobolev - daniil.sob56@gmail.com (telegram: [dansobolev](https://t.me/dansobolev))
+## Programmer
+Artyom Valiakhmetov - xhuman80@gmail.com (telegram: [art5980](https://t.me/art5980))
